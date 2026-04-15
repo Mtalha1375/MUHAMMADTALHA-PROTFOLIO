@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Talha | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;500;700&display=swap');
+        
+        :root { --primary: #00ff41; --bg: #050505; }
+        body { background-color: var(--bg); color: #e2e8f0; font-family: 'Fira Code', monospace; scroll-behavior: smooth; }
+        
+        #bg-canvas { position: fixed; top: 0; left: 0; z-index: -1; opacity: 0.12; }
+
+        .neo-glass {
+            background: rgba(15, 15, 15, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 255, 65, 0.15);
+            transition: all 0.4s ease;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -9px;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background: rgba(0, 255, 65, 0.2);
+        }
+
+        @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        .marquee-content { display: inline-block; animation: scroll 30s linear infinite; }
+    </style>
+</head>
+<body>
+
+    <canvas id="bg-canvas"></canvas>
+
+    <header class="fixed top-0 w-full z-50 p-4 md:p-6 flex justify-between items-center bg-black/80 backdrop-blur-lg border-b border-green-900/20">
+        <div class="flex flex-col">
+            <span class="text-sm font-bold text-green-500 tracking-tighter">TALHA_ROOT</span>
+            <span id="live-clock" class="text-[10px] text-gray-500 uppercase tracking-widest">00:00:00 PKT</span>
+        </div>
+        <nav class="hidden md:flex gap-6 text-[10px] uppercase tracking-widest">
+            <a href="#about" class="hover:text-green-400">./About</a>
+            <a href="#education" class="hover:text-green-400">./Education</a>
+            <a href="#projects" class="hover:text-green-400">./Projects</a>
+            <a href="#contact" class="hover:text-green-400">./Connect</a>
+        </nav>
+        <a href="https://www.linkedin.com/in/talha-khan-b5873b38b" target="_blank" class="text-[10px] border border-green-500 px-4 py-1 rounded hover:bg-green-500 hover:text-black transition">LINKEDIN <i class="fa-brands fa-linkedin-in ml-1"></i></a>
+    </header>
+
+    <section class="min-h-screen flex flex-col justify-center items-center px-6 pt-20">
+        <div class="text-green-500 text-xs mb-4 uppercase tracking-[0.3em] animate-pulse">Status: System Online</div>
+        <h1 class="text-5xl md:text-8xl font-black mb-4 text-white text-center">MUHAMMAD <span class="text-green-500">TALHA</span></h1>
+        <p class="text-gray-400 text-center max-w-2xl text-base md:text-lg mb-10">
+            BSCS Student & Security Researcher. I specialize in full-stack development and offensive security auditing.
+        </p>
+        <div class="flex gap-4">
+            <a href="#projects" class="bg-green-600 text-black px-8 py-3 rounded-sm font-bold text-xs uppercase hover:bg-green-400 transition shadow-[0_0_20px_rgba(0,255,65,0.3)]">View_Projects()</a>
+            <a href="mailto:talhakhannuuw@gmail.com" class="border border-white/20 px-8 py-3 rounded-sm font-bold text-xs uppercase hover:bg-white hover:text-black transition">Ping_Me</a>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 px-6 max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="neo-glass p-8 rounded-2xl">
+                <h2 class="text-2xl font-bold mb-6 text-green-500 uppercase tracking-tighter">01. About_Me</h2>
+                <p class="text-gray-400 leading-relaxed text-sm">
+                    I am a dedicated Computer Science student with a deep focus on **Cybersecurity** and **Modern Web Architectures**. My approach combines technical rigor with an entrepreneurial mindset, as seen in my venture, **Prekix**.
+                    <br><br>
+                    I thrive in environments that challenge my problem-solving skills, whether it's auditing network security or building AI-driven diagnostic tools like **Aura Analyzer**.
+                </p>
+                <div class="mt-8 flex gap-6 grayscale opacity-50">
+                    <i class="fa-solid fa-dumbbell text-2xl" title="Gym"></i>
+                    <i class="fa-solid fa-circle text-2xl" title="Snooker"></i>
+                    <i class="fa-solid fa-gamepad text-2xl" title="Gaming"></i>
+                </div>
+            </div>
+            <div class="space-y-4">
+                <div class="flex justify-between text-xs mb-2"><span>Cybersecurity</span><span class="text-green-500">85%</span></div>
+                <div class="w-full bg-gray-800 h-1"><div class="bg-green-500 h-1 shadow-[0_0_10px_#00ff41]" style="width: 85%"></div></div>
+                
+                <div class="flex justify-between text-xs mb-2 mt-4"><span>Full-Stack (Django/React)</span><span class="text-green-500">90%</span></div>
+                <div class="w-full bg-gray-800 h-1"><div class="bg-green-500 h-1 shadow-[0_0_10px_#00ff41]" style="width: 90%"></div></div>
+
+                <div class="flex justify-between text-xs mb-2 mt-4"><span>Mobile Dev (Kotlin)</span><span class="text-green-500">80%</span></div>
+                <div class="w-full bg-gray-800 h-1"><div class="bg-green-500 h-1 shadow-[0_0_10px_#00ff41]" style="width: 80%"></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="py-24 px-6 max-w-5xl mx-auto">
+        <h2 class="text-2xl font-bold mb-12 uppercase tracking-widest"><span class="text-green-500">02.</span> Education</h2>
+        <div class="space-y-12 ml-4">
+            <div class="relative pl-8 timeline-item">
+                <div class="absolute left-[-13px] top-0 w-2 h-2 rounded-full bg-green-500 shadow-[0_0_8px_#00ff41]"></div>
+                <span class="text-[10px] text-green-500 font-bold uppercase">2023 — 2027 (Expected)</span>
+                <h3 class="text-xl font-bold text-white mt-1">Bachelor of Science in Computer Science</h3>
+                <p class="text-gray-400 text-sm">IST KICSIT, Kahuta Campus</p>
+                <p class="text-gray-500 text-xs mt-2 italic">Current Focus: Semester VI, Network Security, & Software Engineering.</p>
+            </div>
+            <div class="relative pl-8 timeline-item">
+                <div class="absolute left-[-13px] top-0 w-2 h-2 rounded-full bg-green-500/40"></div>
+                <span class="text-[10px] text-gray-500 font-bold uppercase">2021 — 2023</span>
+                <h3 class="text-lg font-bold text-white mt-1">Intermediate (HSSC)</h3>
+                <p class="text-gray-400 text-sm">Pre-Engineering / Computer Science Track</p>
+            </div>
+            <div class="relative pl-8 timeline-item">
+                <div class="absolute left-[-13px] top-0 w-2 h-2 rounded-full bg-green-500/20"></div>
+                <span class="text-[10px] text-gray-500 font-bold uppercase">2019 — 2021</span>
+                <h3 class="text-lg font-bold text-white mt-1">Matriculation (SSC)</h3>
+                <p class="text-gray-400 text-sm">Science Stream</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-24 px-6 max-w-5xl mx-auto">
+        <h2 class="text-2xl font-bold mb-12 uppercase tracking-widest"><span class="text-green-500">03.</span> Projects</h2>
+        <div class="grid md:grid-cols-3 gap-4">
+            <a href="https://github.com/Mtalha1375/aura-analyzer-x" target="_blank" class="neo-glass p-6 rounded group hover:bg-green-500/5">
+                <h3 class="font-bold group-hover:text-green-500 transition text-sm">AURA ANALYZER X</h3>
+                <p class="text-[10px] text-gray-500 mt-2">Pattern recognition & system analytics.</p>
+            </a>
+            <a href="https://github.com/Mtalha1375/HEALTH-MATE" target="_blank" class="neo-glass p-6 rounded group hover:bg-green-500/5">
+                <h3 class="font-bold group-hover:text-green-500 transition text-sm">HEALTH MATE</h3>
+                <p class="text-[10px] text-gray-500 mt-2">Mobile health & calorie management.</p>
+            </a>
+            <a href="https://prekix.store/" target="_blank" class="neo-glass p-6 rounded group hover:bg-green-500/5">
+                <h3 class="font-bold group-hover:text-green-500 transition text-sm">PREKIX STORE</h3>
+                <p class="text-[10px] text-gray-500 mt-2">E-commerce for thrifted footwear.</p>
+            </a>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 px-6 max-w-xl mx-auto text-center">
+        <h2 class="text-3xl font-black mb-4 uppercase">Get In Touch</h2>
+        <p class="text-gray-500 text-sm mb-10">I am currently looking for internship opportunities and security projects.</p>
+        <a href="mailto:talhakhannuuw@gmail.com" class="text-green-500 font-bold border border-green-500 px-10 py-4 rounded hover:bg-green-500 hover:text-black transition uppercase text-xs">Send_Transmission</a>
+    </section>
+
+    <footer class="py-10 text-center border-t border-green-900/10">
+        <p class="text-[10px] text-gray-600 uppercase tracking-widest tracking-[0.5em]">Muhammad Talha // 2026</p>
+    </footer>
+
+    <script>
+        // Matrix Background
+        const canvas = document.getElementById('bg-canvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        const drops = Array(Math.floor(canvas.width / 14)).fill(1);
+
+        function drawMatrix() {
+            ctx.fillStyle = "rgba(5, 5, 5, 0.1)";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = "#0F0";
+            ctx.font = "14px monospace";
+            drops.forEach((y, i) => {
+                const text = Math.random() > 0.5 ? "0" : "1";
+                ctx.fillText(text, i * 14, y * 14);
+                if (y * 14 > canvas.height && Math.random() > 0.975) drops[i] = 0;
+                drops[i]++;
+            });
+        }
+
+        // Pakistan Standard Time
+        function updateClock() {
+            const now = new Date();
+            const pktTime = new Intl.DateTimeFormat('en-GB', {
+                timeZone: 'Asia/Karachi',
+                hour: '2-digit', minute: '2-digit', second: '2-digit',
+                hour12: false
+            }).format(now);
+            document.getElementById('live-clock').innerText = `${pktTime} PKT`;
+        }
+
+        setInterval(drawMatrix, 40);
+        setInterval(updateClock, 1000);
+        updateClock();
+        window.onresize = () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; };
+    </script>
+</body>
+</html>
